@@ -1,0 +1,47 @@
+create me login startproject th_system startapp accounts startapp monitoring
+in django show code and steps and folder structure with best practice include core
+create commands to create necessary folders and files needed when creating an app
+
+django create startproject core, startapp monitoring, use appscheduler, firebase admin
+connect to firebase realtimedatabase get data and display to dashboard asyncronous
+create login page and dashboard, once successfully login redirect to dashboard
+qsc_data:
+        date
+        time            
+        humidity
+	temperature
+
+show steps and all codes
+
+
+python -m venv venv
+django-admin startproject th_system
+cd th_system
+python manage.py startapp core
+python manage.py startapp accounts
+python manage.py startapp monitoring
+
+# For the 'core' app
+mkdir core\templates
+mkdir core\static
+
+# For the 'accounts' app
+mkdir accounts/templates 
+mkdir accounts/static
+#create login.html
+echo "<!DOCTYPE html></html>" > accounts/templates/accounts/login.html
+#create css for login
+New-Item -ItemType File -Path accounts/static/css/style.css
+
+mkdir -p accounts/templates/accounts && echo "<!DOCTYPE html></html>" > accounts/templates/accounts/login.html
+mkdir -p accounts/static
+mkdir accounts\static\css
+mkdir accounts\static\js
+
+# For the 'monitoring' app
+mkdir monitoring/templates
+mkdir monitoring/static
+mkdir monitoring\static\css
+mkdir monitoring\static\js
+
+

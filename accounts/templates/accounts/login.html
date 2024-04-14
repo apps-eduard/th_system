@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}  <!-- Load the tag library -->
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" /> <!-- Make sure to create this CSS file -->
+<div class="login-container">
+    <div class="login-content">
+        <div class="login-form">
+                <h3>USER LOGIN</h3>
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }} <!-- Assumes label_tag is styled properly -->
+                            {{ field }} <!-- No add_class filter needed, but you'll need to style these fields -->
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <button type="submit" class="login-btn">Login</button>
+                        <a href="{% url 'accounts:register' %}" class="forgot-password">Register</a>                       
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

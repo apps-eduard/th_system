@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Email Alerts{% endblock %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/email_alerts_table.css' %}">
+
+    <h1>Email Alerts</h1>
+
+    <!-- Page Size Selector -->
+    <div class="form-inline centered-content">
+        <label for="pageSize">Page Size:</label>
+        <select id="pageSize" class="form-control">
+            <option value="10" {% if page_size == 10 %} selected {% endif %}>10</option>
+            <option value="20" {% if page_size == 20 %} selected {% endif %}>20</option>
+            <option value="50" {% if page_size == 50 %} selected {% endif %}>50</option>
+            <option value="100" {% if page_size == 100 %} selected {% endif %}>100</option>
+        </select>
+        <button class="btn btn-secondary" id="applyPageSize">
+            <i class="fas fa-check-circle mr-1"></i> Apply
+        </button>    </div>
+
+
+<!-- Date Range Selector -->
+<div class="form-inline centered-content">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" class="form-control" name="startDate" value="{{ default_start_date }}">
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" class="form-control" name="endDate" value="{{ default_end_date }}">
+    <button class="btn btn-info" id="applyDateRange">
+        <i class="fas fa-calendar-check mr-1"></i> Update
+    </button>       
+    <a href="{% url 'monitoring:dashboard' %}" class="btn btn-secondary btn-dashboard">
+        <i class="fas fa-chart-line mr-1"></i> Dashboard
+    </a>
+</div>
+
+    <!-- Table -->
+    <div class="table-container centered-content">
+        <table class="table">
+            <!-- Table Header -->
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Location</th>
+                    <th>Sender Email</th>
+                    <th>Receiver Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+                {% for alert in alerts %}
+                    <tr>
+                        <td>{{ alert.date }}</td>
+                        <td>{{ alert.time}}</td>
+                        <td>{{ alert.temperature }}°C</td>
+                        <td>{{ alert.humidity }}%</td>
+                        <td>{{ alert.database_key | upper  }} Server</td>
+                        <td>{{ alert.sender_email }}</td>
+                        <td>{{ alert.receiver_email }}</td>
+                        <td>{{ alert.message }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination Links -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if alerts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ alerts.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ alerts.number }} of {{ alerts.paginator.num_pages }}.
+            </span>
+
+            {% if alerts.has_next %}
+                <a href="?page={{ alerts.next_page_number }}">next</a>
+                <a href="?page={{ alerts.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+    <!-- JavaScript for Page Size Selection -->
+    <script>
+        document.getElementById('applyPageSize').addEventListener('click', function() {
+            var pageSize = document.getElementById('pageSize').value;
+            var urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('page_size', pageSize);
+            window.location.href = '?' + urlParams.toString();
+        });
+    </script>
+
+{% endblock %}

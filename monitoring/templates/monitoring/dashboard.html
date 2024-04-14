@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<style>
+    .navbar {
+        z-index: 1050; /* Ensure this value is higher than other page elements */
+    }
+</style>
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<div class="dashboard-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for category, data_dict in latest_data.items %}
+                {% for data_key, data in data_dict.items %}
+                    <div class="col-md-4 mb-4">
+                        <a href="{% url 'th_monitoring:trend_page' %}?category={{ category }}" class="card-link">
+                            <div class="card h-100" data-category="{{ category|lower }}">
+                                <div class="card-header">
+                                    {{ category|capfirst }} Server Room
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-section top-row">
+                                        <div class="icon-group">
+                                            <i class="fas fa-calendar-alt icon-color-date"></i>
+                                            <p>{{ data.date|date:"SHORT_DATE_FORMAT" }}</p>
+                                        </div>
+                                        <div class="icon-group">
+                                            <i class="fas fa-clock icon-color-time"></i>
+                                            <p>{{ data.time }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-section bottom-row">
+                                        <div class="icon-group">
+                                            <i class="fas fa-temperature-low icon-color-temp"></i>
+                                            <p>{{ data.temperature }}°C</p>
+                                        </div>
+                                        <div class="icon-group">
+                                            <i class="fas fa-tint icon-color-humid"></i>
+                                            <p>{{ data.humidity }}%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Email Settings{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .navbar { /* Replace '.navbar' with the actual class or ID of your navbar */
+      z-index: 1050; /* Ensure this value is higher than other page elements */
+    }
+  </style>
+<link rel="stylesheet" href="{% static 'css/email_alerts.css' %}">
+<div class="email_settings-container">
+    <div class="email_settings-card">
+        <h2 class="email_settings-title">Email Settings</h2>
+        <form method="post" class="email_settings-form">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <input type="{{ field.field.widget.input_type }}" 
+                       name="{{ field.name }}" 
+                       class="form-field {{ field.css_classes }}" 
+                       placeholder="{{ field.label }}" 
+                       id="id_{{ field.name }}"
+                       {% if field.field.required %}required{% endif %}>
+            </div>
+            {% endfor %}
+            <button type="submit" class="email_settings-btn">Save</button>
+            <a href="{% url 'th_monitoring:dashboard' %}" class="btn btn-secondary btn-block">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.dashboard-container {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    min-height: 100%;
+}
+
+.chart-container {
+    width: 80vw;
+    height: auto;
+    max-height: 65vh;
+    margin-top: 20px;
+    background: whitesmoke;
+    padding: 0.5em;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    margin-top: 1em;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.form-inline {
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Allows form items to wrap on smaller screens */
+}
+
+.btn, .btn-dashboard, .btn-refresh, input[type=date] {
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease-in-out;
+    height: 40px; /* Ensure consistent height */
+}
+
+.btn i {
+    margin-right: 5px; /* Adjust the value as needed */
+}
+
+.btn, .btn-dashboard, .btn-refresh {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px; /* Ensure sufficient width */
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    box-shadow: 0 4px 8px rgba(108,117,125,0.3);
+}
+
+.btn-dashboard {
+    background-color: #4e73df;
+    color: black; /* Set font color to black */
+}
+
+.btn-dashboard:hover {
+    background-color: #2643e9;
+}
+
+.btn-refresh {
+    background-color: #1cc88a;
+    margin-right: 20px; /* Increase gap between refresh and dashboard buttons */
+}
+
+.btn-refresh:hover {
+    background-color: #17a673;
+}
+
+input[type=date] {
+    background-color: #fff;
+}
+
+input[type=date]:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.alert {
+    border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .btn-dashboard, .btn-refresh {
+        display: block;
+        margin: 5px 7px;
+    }
+
+    input[type=date] {
+        margin-bottom: 5px; /* Add gap between calendar inputs on smaller devices */
+        width: 95%;
+    }
+}

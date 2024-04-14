@@ -1,0 +1,109 @@
+/* login.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* This matches the gradient in your design */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-content {
+    background: rgba(255, 255, 255, 0.8); /* Translucent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Adjust the width as needed */
+    text-align: center;
+}
+
+.form-side {
+    margin-bottom: 1rem;
+}
+
+.form-side h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.form-side p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.user-login h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.form-horizontal {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-right: .5rem; /* Space between label and the input */
+    color: #333;
+    font-size: 0.8rem; /* Smaller font size */
+    flex-shrink: 0; /* Prevent the label from shrinking */
+}
+
+
+.form-group input {
+    border: 1px solid #ccc;
+    border-radius: 20px; /* This creates the rounded corners for text boxes */
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent fields */
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none; /* Removes the default focus outline */
+}
+
+.login-btn {
+    background-color: #80e0a1; /* Soft green, adjust as needed */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #66cc8a; /* Darker shade for hover effect */
+}
+
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin-top: 1rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: .5rem;
+}

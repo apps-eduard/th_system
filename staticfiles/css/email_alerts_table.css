@@ -1,0 +1,133 @@
+/* Global styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Gradient background */
+}
+
+/* Rounded buttons and inputs */
+.btn, .form-inline.centered-content select, .form-inline.centered-content input[type="date"], .form-inline.centered-content button {
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease-in-out;
+    height: 40px; /* Ensure consistent height */
+    margin-right: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px; /* Ensure sufficient width */
+    text-align: center; 
+}
+
+/* Page Size Selector */
+.form-inline.centered-content {
+    margin-bottom: 20px;
+}
+
+.form-inline.centered-content label {
+    margin-right: 10px;
+}
+
+.form-inline.centered-content select {
+    margin-right: 10px;
+    padding: 8px 12px; /* Adjusted padding */
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.form-inline.centered-content button {
+    padding: 10px 20px; /* Adjusted padding */
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-inline.centered-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Table */
+.table-container {
+    padding: 0 15px; /* Added padding */
+    margin: 20px 0; /* Updated margin */
+    border: 2px solid #ccc; /* Added border */
+    border-radius: 20px; /* Added border-radius */
+    background-color: #fff;
+    overflow-x: auto; /* Add horizontal scroll for small screens */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ced4da; /* Updated border color */
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.table th {
+    background-color: #007bff; /* Updated header background color */
+    color: white; /* Updated header text color */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #e9ecef; /* Updated even row background color */
+}
+
+/* Buttons with Different Animations */
+#applyPageSize {
+    transition: transform 0.3s ease; /* Added animation */
+}
+
+#applyDateRange {
+    transition: background-color 0.3s ease; /* Added animation */
+}
+
+.btn-dashboard {
+    transition: color 0.3s ease; /* Added animation */
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #007bff;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Media Query for Responsive Table */
+@media only screen and (max-width: 768px) {
+    .table th, .table td {
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflow text */
+        text-overflow: ellipsis; /* Display ellipsis for overflow text */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width on small screens */
+        margin: 10px 0; /* Add some spacing between buttons */
+    }
+}

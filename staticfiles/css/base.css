@@ -1,0 +1,101 @@
+/* Base layout styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    /* If your header is of a fixed height; otherwise, you'll need to determine the height dynamically */
+    height: 60px; /* Example height */
+}
+
+/* Main content styles */
+main {
+    flex-grow: 1;
+    padding: 1rem; /* Add padding to prevent content from touching the edges */
+    overflow-y: auto; /* Allows for scrolling within the main area if necessary */
+    margin-top: -60px; /* Adjust based on your actual header height */
+    margin-bottom: -40px; /* Adjust based on your actual footer height */
+}
+
+
+.navbar {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* Light text color for contrast */
+}
+
+.navbar-brand {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ensures long titles are gracefully truncated */
+}
+
+.navbar-nav .nav-link {
+    color: #007bff; /* Bootstrap primary blue for links */
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #0056b3; /* Slightly darker blue on hover/focus */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    right: 0;
+    left: auto; /* Align dropdown to the right of the navbar item */
+}
+
+/* Footer specific styles */
+footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* Light text color for contrast */
+    text-align: center;
+    padding: 10px 0;
+    height: 40px; /* Example height */
+}
+
+footer a {
+    color: #f8f9fa; /* Light grey link color */
+}
+
+footer a:hover {
+    color: #ddd; /* Slightly lighter grey on hover */
+}
+
+/* Utility classes */
+.container, .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* custom navbar styling */
+.navbar-brand {
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-item .dropdown-menu {
+    right: 0;
+    left: auto;
+}

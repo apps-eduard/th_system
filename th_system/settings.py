@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.8.100']
 
 
 # Application definition
@@ -116,6 +116,7 @@ STATIC_URL = '/static/'
 
 # Define the directory where static files will be collected during deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

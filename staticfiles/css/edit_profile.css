@@ -1,0 +1,84 @@
+/* edit_profile.css */
+
+/* Apply styles similar to the registration page */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* This should match the gradient in your design */
+  }
+  
+  .edit_profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .edit_profile-card {
+    background: rgba(255, 255, 255, 0.8); /* Translucent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Adjust the width as needed */
+    text-align: center;
+  }
+  
+  .edit_profile-title {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .edit_profile-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-field {
+    border: 1px solid #ccc;
+    border-radius: 20px; /* This creates the rounded corners for text boxes */
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent fields */
+    width: 100%;
+  }
+  
+  .form-field:focus {
+    border-color: #3498db;
+  }
+  
+  .edit_profile-btn {
+    background-color: #80e0a1; /* Soft green, adjust as needed */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .edit_profile-btn:hover {
+    background-color: #66cc8a; /* Darker shade for hover effect */
+  }
+  
+  .btn-secondary {
+    background-color: #333; /* Background color for cancel button */
+    color: white; /* Text color for cancel button */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Rounded corners for cancel button */
+    padding: 10px 15px; /* Padding for cancel button */
+    cursor: pointer; /* Cursor style */
+    margin-top: 0.5rem; /* Adjust top margin */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #555; /* Darker background color on hover */
+  }
+  

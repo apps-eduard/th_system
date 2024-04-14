@@ -1,0 +1,96 @@
+/* register */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* This should match the gradient in your design */
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.8); /* Translucent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Adjust the width as needed */
+    margin-right: 2rem; /* Spacing between the form and the security card */
+    text-align: center;
+}
+
+.register-title {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.register-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-field {
+    border: 1px solid #ccc;
+    border-radius: 20px; /* This creates the rounded corners for text boxes */
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent fields */
+    width: 100%;
+
+}
+
+.form-field:focus {
+    border-color: #3498db;
+}
+
+.register-btn {
+    background-color: #80e0a1; /* Soft green, adjust as needed */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.register-btn:hover {
+    background-color: #66cc8a; /* Darker shade for hover effect */
+}
+
+.terms {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.register-security {
+    background: rgba(255, 255, 255, 0.9); /* More opaque than the form */
+    backdrop-filter: blur(10px); /* Blurred effect */
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Adjust width as needed */
+    text-align: center;
+    margin-left: -50px; /* Slightly overlapping the register card */
+}
+
+.lock-icon {
+    font-size: 2rem; /* Adjust size as needed */
+    color: #3498db;
+}
